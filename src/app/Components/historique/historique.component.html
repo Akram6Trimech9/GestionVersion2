@@ -1,0 +1,35 @@
+<div class="container-xl">
+	<div class="table-responsive">
+		<div class="table-wrapper">
+          
+		
+
+			<cds-search layout="horizontal">
+                <label>search</label>
+                <input [(ngModel)]="searchb" (ngModelChange)="search()" type="search" />
+            </cds-search>
+			<table class="table table-striped table-hover">
+				<thead>
+					<tr>
+
+						<th>Num de commande </th>
+						<th>Details</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr	*ngFor="let item of  commandes" >
+						
+						<td>{{item.clientName}}</td>
+						<td>
+							<a (click)="show()" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xe8ff;</i></a>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+
+		</div>
+	</div>        
+</div>
+
+
+<!-- Delete Modal HTML -->

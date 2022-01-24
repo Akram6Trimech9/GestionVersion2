@@ -1,0 +1,55 @@
+<div class="container-xl">
+	<div class="table-responsive">
+		<div class="table-wrapper">
+          <!-- Delete Modal HTML
+
+			<div class="table-title">
+				<div class="row">
+					<div class="col-sm-6">
+					</div>
+					<div class="col-sm-6">					
+					</div>
+				</div>
+			</div> -->
+
+            <cds-search layout="horizontal">
+                <label>search</label>
+                <input [(ngModel)]="searchb" (ngModelChange)="search()" type="search" />
+            </cds-search>
+            
+			<table class="table table-striped table-hover">
+
+
+				<thead>
+					<tr>
+                        <th>            <button class="button"  (click)="openDialog()" mat-raised-button color="primary">+</button>
+                        </th>
+						<th>name</th>
+						<th>quantity</th>
+						<th>price</th>
+						<th>priceTtc</th>
+						<th>rem</th>
+						<th>Actions</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr *ngFor="let product of products">
+                        <td></td>
+						<td>{{product.name}}</td>
+						<td>{{product.quantity}}</td>
+						<td>{{product.price}}</td>
+						<td>{{product.priceTtc}}</td>
+						<td>{{product.rem}}</td>
+						<td>
+							<a  (click)="edit()" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
+							<a  (click)="myFunction(product._Id)"  class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip"  title="Delete">&#xE872;</i></a>
+						</td>
+					</tr>	
+				</tbody>
+			</table>
+
+		</div>
+	</div>        
+</div>
+
+

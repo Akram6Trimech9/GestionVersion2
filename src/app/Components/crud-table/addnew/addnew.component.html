@@ -1,0 +1,32 @@
+<h1 mat-dialog-title>
+</h1>
+<div mat-dialog-content>
+  <form [formGroup]="form">
+    <mat-form-field appearance="fill">
+        <mat-label>Name</mat-label>
+        <input matInput formControlName="name">
+      </mat-form-field><br> 
+      <mat-form-field appearance="fill">
+        <mat-label>quantity</mat-label>
+        <input matInput formControlName="quantity" >
+      </mat-form-field><br> 
+        <mat-form-field appearance="fill">
+          <mat-label>price</mat-label>
+          <input matInput formControlName="price" >
+        </mat-form-field><br> 
+        <mat-form-field appearance="fill">
+          <mat-label>priceTtc</mat-label>
+          <input matInput formControlName="priceTtc">
+        </mat-form-field><br> 
+        <mat-form-field appearance="fill">
+        <mat-label>Rem</mat-label>
+        <input matInput formControlName="Rem">
+      </mat-form-field>
+    </form>
+</div>
+<div mat-dialog-actions>
+  <button mat-button mat-dialog-close>Close</button>
+  <button mat-button (click)="addthis()">add</button>
+
+</div>
+

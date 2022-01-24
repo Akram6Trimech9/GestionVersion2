@@ -1,0 +1,33 @@
+<div class="login-wrapper">
+    <div class="wallpaper">
+    <form  [formGroup]="form" class="login">
+      <section class="title">
+        <h3 class="welcome">Welcome to</h3>
+        your GS app
+         <h5 class="hint">Use your Company ID to sign in </h5>
+      </section>
+      <div class="login-group">
+        <clr-select-container>
+          <label class="clr-sr-only">User Role</label>
+          <select clrSelect name="type" >
+            <option value="admin">Administrator</option>
+          </select>
+        </clr-select-container>
+        <clr-input-container>
+          <label class="clr-sr-only">Username</label>
+          <input type="text" name="username" clrInput placeholder="Username" formControlName="username"  />
+        </clr-input-container>
+        <clr-password-container>
+          <label class="clr-sr-only">Password</label>
+          <input type="password" name="password" clrPassword placeholder="Password" formControlName="password"  />
+        </clr-password-container>
+        <clr-checkbox-wrapper>
+          <label>Remember me</label>
+          <input type="checkbox" name="rememberMe" clrCheckbox  />
+        </clr-checkbox-wrapper>
+
+        <button type="submit" class="btn btn-primary" (click)="submit()">NEXT</button>
+      </div>
+    </form>
+  </div>
+</div>

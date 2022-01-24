@@ -1,0 +1,10 @@
+#img{
+    width: 55px;
+    
+}
+#img1{
+    position: relative;
+    left: 1050px;
+    width: 30px ;
+     transform: rotate(90deg);
+}

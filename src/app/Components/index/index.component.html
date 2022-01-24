@@ -1,0 +1,41 @@
+<div class="clr-example">
+    <div class="main-container">
+      <header class="header-6">
+        <div class="branding">
+          <a href="javascript://">
+ <img id="img" src="../../../assets/img/gslogo.png">
+            <span class="title">Gs application </span>
+          </a>
+        </div>
+        <div >
+          <div class="header-actions">
+          <a   routerLink=""  class="nav-link nav-icon">
+            <img   id="img1" src="../../../assets/img/logout.png">
+          </a>
+        </div>
+        </div>
+      </header>
+      <nav class="subnav">
+        <ul class="nav">
+          <li class="nav-item">
+            <a class="nav-link "   routerLinkActive="active" routerLink="crud">Gestion des produits </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLinkActive="active" routerLink="commande">Commander </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLinkActive="active" routerLink="historique">historique </a>
+          </li>
+          <li class="nav-item">
+          </li>
+        </ul>
+      </nav>
+      <div class="content-container">
+        <div class="content-area">
+            <router-outlet></router-outlet>
+        </div>
+      </div>
+    </div>
+
+  
+  </div>

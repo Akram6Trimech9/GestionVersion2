@@ -1,0 +1,136 @@
+<div class="content-container">
+
+    <div class="content-area">
+      <cds-search control-width="shrink">
+        <label>search</label>
+        <input [(ngModel)]="searchb" (ngModelChange)="search()" type="search" />
+      </cds-search>
+      <div *ngIf="val==true" >
+     <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">name</th>
+            <th scope="col">quantity</th>
+            <th scope="col">price</th>
+            <th scope="col">price &nbsp; <small>(TTC)</small></th>
+            <th scope="col">Rem</th>
+
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let product of products">
+<td>{{product.name}}</td>
+<td>{{product.quantity}}</td>
+<td>{{product.price}}</td>
+<td>{{product.priceTtc}}</td>
+<td>{{product.rem}}</td>
+<td>
+            <td>
+                <a (click)="addToCommand(product._Id)"   style="cursor: pointer;" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="ajouter">&#xe97b;</i></a>
+        </td>  
+    </tr>           
+    
+      
+        </tbody>
+      </table>  
+    </div>
+    <div  class="newwid" *ngIf="val==false" >
+      <table class="table">
+         <thead>
+           <tr>
+             <th scope="col">name</th>
+             <th scope="col">quantity</th>
+             <th scope="col">price</th>
+             <th scope="col">price &nbsp; <small>(TTC)</small></th>
+             <th scope="col">Rem</th>
+ 
+           </tr>
+         </thead>
+         <tbody>
+           <tr *ngFor="let product of products">
+ <td>{{product.name}}</td>
+ <td>{{product.quantity}}</td>
+ <td>{{product.price}}</td>
+ <td>{{product.priceTtc}}</td>
+ <td>{{product.rem}}</td>
+ <td>
+             <td>
+                 <a (click)="addToCommand(product._Id)"   style="cursor: pointer;" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="ajouter">&#xe97b;</i></a>
+         </td>  
+     </tr>           
+     
+       
+         </tbody>
+       </table>  
+     </div>
+    </div>
+    <div *ngIf="val==false">
+    <nav  class="sidenav">
+      <section class="sidenav-content">
+        <div class="card">
+          <div class="card-block">
+            <cds-icon (click)="close()" style="cursor: pointer;" shape="times"></cds-icon>
+
+            <cds-alert-group cds-layout="m-b:md" size="sm" status="warning" type="default">
+              <cds-alert class="center"></cds-alert>
+            </cds-alert-group>
+            <div class="card-media-block wrap">
+              <img class="card-media-image" src='../../../assets/img/logo.png' />
+              <div class="card-media-description">
+                <form [formGroup]="form">
+
+                <div *ngFor="let item of produitsVendus" >
+           
+              <clr-input-container>
+              <label>{{item.produit.name}}</label>
+              <input  clrInput  placeholder="{{item.quantity}}"  name="name"  />
+            </clr-input-container>   
+            </div>
+
+                <clr-input-container>
+                  <label>clientName</label>
+                  <input formControlName="clientName"  clrInput  name="name"  />
+                </clr-input-container>
+                <clr-input-container>
+                  <label>clientAddress</label>
+                  <input   formControlName="clientAddress" clrInput  name="name" />
+                </clr-input-container>
+                <clr-input-container>
+                  <label>clientRef</label>
+                  <input   formControlName="clientRef"clrInput  name="name"  />
+                </clr-input-container>
+                <clr-input-container>
+                  <label>netTotale</label>
+                  <input   formControlName="netTotale" clrInput  name="name"  />
+                </clr-input-container>       
+                <clr-input-container>
+                  <label>htTotale</label>
+                  <input  formControlName="htTotale"  clrInput  name="name"  />
+                </clr-input-container>   
+                <clr-input-container>
+                  <label>remise</label>
+                  <input  formControlName="remise" clrInput  name="name"  />
+                </clr-input-container>      
+              </form>
+     
+              </div>
+            </div>
+            <p class="card-text">
+              ...
+            </p>
+          </div>
+
+          <div class="card-footer">
+            <a  (click)="post()" class="card-link"><cds-button>
+               commander  <cds-badge color="blue"></cds-badge>
+          </cds-button></a>
+            <a class="card-link"><cds-button action="outline">
+Reset <cds-badge color="blue"></cds-badge>
+          </cds-button></a>
+          </div>
+        </div>
+        
+      </section>
+    </nav>
+  </div>
+  </div>    
