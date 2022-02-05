@@ -103,11 +103,21 @@ post(){
      "remise":Number(this.form.value.remise),
      "produitsVendus":this.produitsVendus
    }
-   this.commandeservice.addnewcommande(data).subscribe(res=>{
-   console.log(res) 
-  })
-   console.log(data)
-}
+   this.commandeservice.addnewcommande(data).subscribe( data => {
+    const blob= new Blob([data], {type:'application/pdf'});
+
+    
+    const url = window.URL.createObjectURL(blob); 
+    var anchor = document.createElement("a");
+ 
+    anchor.href = url;
+
+    window.open(anchor.href);
+   }
+
+   )
+
+  }
  cardItem=[];   
    
     close(){

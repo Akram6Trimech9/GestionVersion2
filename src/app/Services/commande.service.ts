@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { environment } from 'src/environments/environment.prod';
 
 @Injectable({
   providedIn: 'root'
@@ -8,11 +9,11 @@ import { Observable } from 'rxjs';
 export class CommandeService {
 
   constructor(private http:HttpClient) { }
-  url='http://localhost:8080/commande';
-  addnewcommande(commande :any ): Observable<any>{
-    return  this.http.post<any>(`${this.url}/addcommande`,commande) 
+  url=environment.commandeUrl;
+  addnewcommande(commande :any ){
+    return  this.http.post<any>(`${this.url}/addcommande`,commande,{responseType: 'blob' as 'json'  }) 
   }
   getAllCommande() : Observable<any[]>  {
-    return this.http.get<any[]>(`${this.url}/getall`);
+    return this.http.get<any[]>(`${this.url}/getAllCommandes`);
   } 
 }
