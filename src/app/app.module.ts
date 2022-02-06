@@ -20,6 +20,7 @@ import { Ng2OrderModule } from 'ng2-order-pipe';
 import { ProductServiceService } from './Services/product-service.service';
 import { HttpClientModule } from '@angular/common/http';
 import { ToastrModule } from 'ngx-toastr';
+import {ModalDismissReasons, NgbModal} from '@ng-bootstrap/ng-bootstrap';
 
 
 import { NgxPaginationModule } from 'ngx-pagination';

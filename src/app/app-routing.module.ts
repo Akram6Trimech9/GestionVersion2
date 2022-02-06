@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
 import { CrudTableComponent } from './Components/crud-table/crud-table.component';
 import { HistoriqueComponent } from './Components/historique/historique.component';
+import { ShowoneComponent } from './Components/historique/showone/showone.component';
 import { IndexComponent } from './Components/index/index.component';
 import { LoginComponent } from './Components/login/login.component';
 import { Page404Component } from './Components/page404/page404.component';
@@ -16,6 +17,10 @@ const routes: Routes = [
 {
   path:'crud',
   component:CrudTableComponent
+},
+{
+  path:'historique/:id/edit',
+  component:ShowoneComponent
 },
 {
 path:'commande',

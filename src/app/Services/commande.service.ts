@@ -15,4 +15,7 @@ export class CommandeService {
   getAllCommande() : Observable<any[]>  {
     return this.http.get<any[]>(`${this.url}/getall`);
   } 
+  getCommandebyid(id:any): Observable<any[]>{
+    return this.http.get<any[]>(`${this.url}/getcommande/${id}`)
+  }
 }

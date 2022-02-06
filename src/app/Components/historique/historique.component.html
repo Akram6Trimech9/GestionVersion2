@@ -21,7 +21,7 @@
 						
 						<td>{{item.clientName}}</td>
 						<td>
-							<a (click)="show()" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xe8ff;</i></a>
+							<a [routerLink]="['../historique',item._id,'edit']" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xe8ff;</i></a>
 						</td>
 					</tr>
 				</tbody>

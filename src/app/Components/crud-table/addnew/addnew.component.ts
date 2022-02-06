@@ -15,7 +15,6 @@ export class AddnewComponent implements OnInit {
       name:new FormControl(),
       quantity:new FormControl(), 
       price:new FormControl(), 
-      priceTtc:new FormControl(), 
       Rem:new FormControl(), 
     }
     this.form=this.fb.group(formcontrols)
@@ -24,18 +23,12 @@ export class AddnewComponent implements OnInit {
   ngOnInit(): void {
   }
   addthis(){
-    //var formdata : any = new FormData();
-    //formdata.append("name",this.form.value.name);
-    //formdata.append("quantity", Number(this.form.value.quantity));
-    //formdata.append("price", Number(this.form.value.price));
-    //formdata.append("priceTtc", Number(this.form.value.priceTtc));
-    //formdata.append("rem", Number(this.form.value.Rem));
-   // let body = JSON.stringify(formdata);
    let  data :any={
      "name":  this.form.value.name , 
      "quantity":Number(this.form.value.quantity),
      "price":Number(this.form.value.price),
-      "priceTtc":Number(this.form.value.priceTtc),
+      "priceTtc":0.0,
+      "priceHt": 0.0,
       "rem":Number(this.form.value.Rem)
     }
 
