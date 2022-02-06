@@ -1,3 +1,6 @@
 export const environment = {
-  production: true
+  production: true,
+  commandeUrl:"/api/commande",
+  productUrl: "/api/product",
+
 };
