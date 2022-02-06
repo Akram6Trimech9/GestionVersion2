@@ -49,14 +49,7 @@ export class PdfComponent implements OnInit {
       })
     }
     }
-    qte:any[]=[];
-   productadd:any[]=[];
-    clrtab:any[]=[];
-    i=0;
-
-
- 
-    
+     
     addToCommand(id:string){
       this.val=false ;
 
