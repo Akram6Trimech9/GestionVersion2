@@ -6,5 +6,5 @@ RUN npm run build --prod
 FROM nginx:alpine
 WORKDIR /app
 COPY    nginx.conf  /etc/nginx/nginx.conf
-COPY   --from=node /app/dist/clrfms  /usr/share/nginx/html
+COPY   --from=node /app/dist/GestionApplication  /usr/share/nginx/html
 
